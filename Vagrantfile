@@ -19,4 +19,7 @@ Vagrant.configure(2) do |config|
   config.vm.hostname = "onos-p4-" + P4_VM_TYPE
   config.vm.network "private_network", :type => 'dhcp', :adapter => 2
   config.vm.provision "shell", path: "root-bootstrap.sh", :args => P4_VM_TYPE
+  config.vm.provision "shell", path: "sim-bootstrap.sh", :args => P4_VM_TYPE
+  config.vm.provision "shell", path: "p4-bootstrap.sh", :args => P4_VM_TYPE
+  config.vm.provision "shell", path: "apps-bootstrap.sh", :args => P4_VM_TYPE
 end
