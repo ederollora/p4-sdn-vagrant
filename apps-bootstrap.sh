@@ -24,9 +24,10 @@ sudo apt-get -y --no-install-recommends install \
     atom \
     gdebi \
     sublime-text \
+    terminator \
     vim \
     wget
-
+    
 # Disable screensaver
 sudo apt-get -y remove light-locker
 
@@ -58,15 +59,29 @@ git clone https://github.com/c3m3gyanesh/p4-syntax-highlighter.git
 apm install language-p4
 
 #chrome
-mkdir -p ~/Downloads
+mdkir -p ~/Downloads
 cd ~/Downloads
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo gdebi google-chrome-stable_current_amd64.deb
-rm google-chrome-stable_current_amd64.deb
+wget https://dl.google.com/linux/linux_signing_key.pub
+sudo apt-key add linux_signing_key.pub
+rm linux_signing_key.pub
+
+echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' \
+     | sudo tee -a /etc/apt/sources.list
+
+sudo apt update
+sudo apt install google-chrome-stable
+
+
+
+#Intellij Toolbox
+cd ~/Downloads
+wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.8.3868.tar.gz
 
 # Adding Desktop icons
 DESKTOP=/home/sdn/Desktop
 mkdir -p ${DESKTOP}
+
+
 
 cat > ${DESKTOP}/Terminal << EOF
 [Desktop Entry]
