@@ -1,7 +1,7 @@
 #!/bin/bash
 set -xe
 
-# Create user sdn
+# Create user sdn 
 :
 useradd -m -d /home/sdn -s /bin/bash sdn
 echo "sdn:rocks" | chpasswd

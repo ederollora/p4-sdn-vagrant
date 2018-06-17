@@ -20,3 +20,4 @@ Vagrant.configure(2) do |config|
   config.vm.network "private_network", :type => 'dhcp', :adapter => 2
   config.vm.provision "shell", path: "root-bootstrap.sh"
 end
+ 
