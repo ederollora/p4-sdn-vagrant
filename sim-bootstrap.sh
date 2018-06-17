@@ -5,7 +5,6 @@ cp /etc/skel/.bashrc ~/
 cp /etc/skel/.profile ~/
 cp /etc/skel/.bash_logout ~/
 
-
 # ONOS
 cd ~
 git clone https://github.com/opennetworkinglab/onos.git
