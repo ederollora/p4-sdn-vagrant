@@ -1,7 +1,7 @@
 P4_VM_TYPE = ENV['P4_VM_TYPE'] || "dev"
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "bento/ubuntu-18.04"
+  config.vm.box = "bento/ubuntu-16.04"
   config.vm.provider "virtualbox" do |vb|
     vb.name = "ONOS+P4 " + P4_VM_TYPE + " " + Time.now.strftime("(%Y-%m-%d)")
     vb.gui = true
