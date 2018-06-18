@@ -84,14 +84,12 @@ rm jetbrains-toolbox-1.8.3868.tar.gz
 #Gitkraken
 cd ~/Downloads
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
-dpkg -i gitkraken-amd64.deb
+sudo dpkg -i gitkraken-amd64.deb
 rm gitkraken-amd64.deb
 
 # Adding Desktop icons
 DESKTOP=/home/sdn/Desktop
 mkdir -p ${DESKTOP}
-
-
 
 cat > ${DESKTOP}/Terminal << EOF
 [Desktop Entry]
