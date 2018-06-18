@@ -19,14 +19,28 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y install wireshark
 echo "wireshark-common wireshark-common/install-setuid boolean true" | sudo debconf-set-selections
 sudo DEBIAN_FRONTEND=noninteractive dpkg-reconfigure wireshark-common
 
+#chrome
+mkdir -p ~/Downloads
+cd ~/Downloads
+wget https://dl.google.com/linux/linux_signing_key.pub
+sudo apt-key add linux_signing_key.pub
+rm linux_signing_key.pub
+
+echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' \
+     | sudo tee -a /etc/apt/sources.list
+
 sudo apt-get -y --no-install-recommends install \
     lubuntu-desktop \
     atom \
     gdebi \
+    google-chrome-stable \
     sublime-text \
     terminator \
     vim \
     wget
+
+# Guest additions
+sudo apt-get install linux-headers-$(uname -r) build-essential dkms
 
 # Disable screensaver
 sudo apt-get -y remove light-locker
@@ -58,28 +72,17 @@ git clone https://github.com/c3m3gyanesh/p4-syntax-highlighter.git
 # Atom
 apm install language-p4
 
-#chrome
-mkdir -p ~/Downloads
-cd ~/Downloads
-wget https://dl.google.com/linux/linux_signing_key.pub
-sudo apt-key add linux_signing_key.pub
-rm linux_signing_key.pub
-
-echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' \
-     | sudo tee -a /etc/apt/sources.list
-
-sudo apt update
-sudo apt install google-chrome-stable
-
-
-
 #Intellij Toolbox
 cd ~/Downloads
 wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.8.3868.tar.gz
+tar -xvzf jetbrains-toolbox-1.8.3868.tar.gz
+rm jetbrains-toolbox-1.8.3868.tar.gz
 
 #Gitkraken
+cd ~/Downloads
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 dpkg -i gitkraken-amd64.deb
+rm gitkraken-amd64.deb
 
 # Adding Desktop icons
 DESKTOP=/home/sdn/Desktop
