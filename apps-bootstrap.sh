@@ -40,7 +40,10 @@ sudo apt-get -y --no-install-recommends install \
     wget
 
 # Guest additions
-sudo apt-get install linux-headers-$(uname -r) build-essential dkms
+sudo apt-get -y --no-install-recommends install \
+    linux-headers-$(uname -r) \
+    build-essential \
+    dkms
 
 # Disable screensaver
 sudo apt-get -y remove light-locker
