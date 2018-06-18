@@ -139,7 +139,7 @@ cat > ${DESKTOP}/Google\ Chrome << EOF
 [Desktop Entry]
 Encoding=UTF-8
 Name=Google chrome
-Name[en_US]=Atom
+Name[en_US]=Google chrome
 Exec=/usr/bin/google-chrome-stable %U
 Terminal=false
 Icon=google-chrome
