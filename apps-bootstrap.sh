@@ -29,6 +29,8 @@ rm linux_signing_key.pub
 echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' \
      | sudo tee -a /etc/apt/sources.list
 
+sudo apt-get update
+
 sudo apt-get -y --no-install-recommends install \
     lubuntu-desktop \
     atom \
