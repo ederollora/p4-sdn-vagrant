@@ -59,7 +59,7 @@ git clone https://github.com/c3m3gyanesh/p4-syntax-highlighter.git
 apm install language-p4
 
 #chrome
-mdkir -p ~/Downloads
+mkdir -p ~/Downloads
 cd ~/Downloads
 wget https://dl.google.com/linux/linux_signing_key.pub
 sudo apt-key add linux_signing_key.pub
@@ -76,6 +76,10 @@ sudo apt install google-chrome-stable
 #Intellij Toolbox
 cd ~/Downloads
 wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.8.3868.tar.gz
+
+#Gitkraken
+wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
+dpkg -i gitkraken-amd64.deb
 
 # Adding Desktop icons
 DESKTOP=/home/sdn/Desktop
