@@ -45,7 +45,9 @@ sudo apt-get -y --no-install-recommends install \
 sudo apt-get -y --no-install-recommends install \
     linux-headers-$(uname -r) \
     build-essential \
-    dkms
+    virtualbox-guest-additions-iso \
+    virtualbox-guest-dkms
+
 
 # Disable screensaver
 sudo apt-get -y remove light-locker
